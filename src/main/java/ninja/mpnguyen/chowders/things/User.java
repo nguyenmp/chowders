@@ -1,5 +1,7 @@
 package ninja.mpnguyen.chowders.things;
 
+import java.io.Serializable;
+
 /**
  {
      "username": "curtis",
@@ -11,7 +13,10 @@ package ninja.mpnguyen.chowders.things;
      "avatar_url": "https://secure.gravatar.com/avatar/ca0c9cb798fd7f80444740a4dbaef7b9?r=pg&d=identicon&s=100"
  }
  */
-public class User {
+public class User implements Serializable {
+    // epoch of modification
+    public static final long serialVersionUID = 1433365167L;
+
     public String username;
     public String created_at;
     public boolean is_admin;
@@ -19,4 +24,14 @@ public class User {
     public boolean is_moderator;
     public int karma;
     public String avatar_url;
+
+    public User(User user) {
+        username = user.username;
+        created_at = user.created_at;
+        is_admin = user.is_admin;
+        about = user.about;
+        is_moderator = user.is_moderator;
+        karma = user.karma;
+        avatar_url = user.avatar_url;
+    }
 }

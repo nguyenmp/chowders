@@ -1,5 +1,7 @@
 package ninja.mpnguyen.chowders.things;
 
+import java.io.Serializable;
+
 /**
     {
         "created_at": "2015-06-01T10:54:48.000-05:00",
@@ -24,7 +26,10 @@ package ninja.mpnguyen.chowders.things;
         ]
     }
  */
-public class Post {
+public class Post implements Serializable {
+    // epoch of modification
+    public static final long serialVersionUID = 1433365167L;
+
     public String created_at;
     public String url;
     public String title;
@@ -35,4 +40,17 @@ public class Post {
     public String comments_url;
     public User submitter_user;
     public String[] tags;
+
+    public Post(Post post) {
+        created_at = post.created_at;
+        url = post.url;
+        title = post.title;
+        short_id = post.short_id;
+        score = post.score;
+        comment_count = post.comment_count;
+        description = post.description;
+        comments_url = post.comments_url;
+        submitter_user = new User(post.submitter_user);
+        tags = post.tags;
+    }
 }

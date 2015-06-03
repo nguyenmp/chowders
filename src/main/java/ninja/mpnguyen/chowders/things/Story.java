@@ -1,5 +1,7 @@
 package ninja.mpnguyen.chowders.things;
 
+import java.io.Serializable;
+
 /**
  {
      "created_at": "2012-12-22T22:15:29.000-06:00",
@@ -107,6 +109,19 @@ package ninja.mpnguyen.chowders.things;
      ]
  }
  */
-public class Story extends Post {
+public class Story extends Post implements Serializable {
+    // epoch of modification
+    public static final long serialVersionUID = 1433365167L;
+
     public Comment[] comments;
+
+    public Story(Post post) {
+        super(post);
+        comments = new Comment[] {};
+    }
+
+    public Story(Story story) {
+        super(story);
+        comments = story.comments;
+    }
 }
