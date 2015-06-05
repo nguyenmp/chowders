@@ -117,7 +117,7 @@ public class Story extends Post implements Serializable {
 
     public Story(Post post) {
         super(post);
-        comments = new Comment[] {};
+        comments = null;
     }
 
     public Story(Story story) {
