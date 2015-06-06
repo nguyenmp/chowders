@@ -1,4 +1,4 @@
-package ninja.mpnguyen.chowders.things;
+package ninja.mpnguyen.chowders.things.json;
 
 import java.io.Serializable;
 

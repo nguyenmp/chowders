@@ -1,6 +1,8 @@
-package ninja.mpnguyen.chowders.nio;
+package ninja.mpnguyen.chowders.nio.json;
 
 import com.google.gson.Gson;
+
+import ninja.mpnguyen.chowders.nio.Get;
 
 public abstract class GetJson<T> extends Get<T> {
     @Override

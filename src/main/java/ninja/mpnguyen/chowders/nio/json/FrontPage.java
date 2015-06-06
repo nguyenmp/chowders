@@ -1,6 +1,6 @@
-package ninja.mpnguyen.chowders.nio;
+package ninja.mpnguyen.chowders.nio.json;
 
-import ninja.mpnguyen.chowders.things.Post;
+import ninja.mpnguyen.chowders.things.json.Post;
 
 import java.io.IOException;
 

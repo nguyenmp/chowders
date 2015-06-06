@@ -1,4 +1,4 @@
-package ninja.mpnguyen.chowders.things;
+package ninja.mpnguyen.chowders.things.json;
 
 import java.io.Serializable;
 
@@ -109,13 +109,13 @@ import java.io.Serializable;
      ]
  }
  */
-public class Story extends Post implements Serializable {
+public class Story extends ninja.mpnguyen.chowders.things.json.Post implements Serializable {
     // epoch of modification
     public static final long serialVersionUID = 1433365167L;
 
     public Comment[] comments;
 
-    public Story(Post post) {
+    public Story(ninja.mpnguyen.chowders.things.json.Post post) {
         super(post);
         comments = null;
     }

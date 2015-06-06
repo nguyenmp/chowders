@@ -1,6 +1,6 @@
-package ninja.mpnguyen.chowders.nio;
+package ninja.mpnguyen.chowders.nio.json;
 
-import ninja.mpnguyen.chowders.things.User;
+import ninja.mpnguyen.chowders.things.json.User;
 
 public class UserFetcher extends GetJson<User> {
     private final String username;
