@@ -25,6 +25,10 @@ public class User implements Serializable {
     public int karma;
     public String avatar_url;
 
+    public User() {
+        // Do nothing
+    }
+
     public User(User user) {
         username = user.username;
         created_at = user.created_at;

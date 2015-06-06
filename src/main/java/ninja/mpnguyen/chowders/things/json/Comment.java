@@ -39,6 +39,10 @@ public class Comment implements Serializable {
     public int indent_level;
     public User commenting_user;
 
+    public Comment() {
+        // Do nothing
+    }
+
     public Comment(Comment other) {
         created_at = other.created_at;
         updated_at = other.updated_at;

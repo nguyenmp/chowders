@@ -120,6 +120,10 @@ public class Story extends ninja.mpnguyen.chowders.things.json.Post implements S
         comments = null;
     }
 
+    public Story() {
+        super();
+    }
+
     public Story(Story story) {
         super(story);
         comments = story.comments;

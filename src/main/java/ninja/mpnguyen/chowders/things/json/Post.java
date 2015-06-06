@@ -41,6 +41,10 @@ public class Post implements Serializable {
     public User submitter_user;
     public String[] tags;
 
+    public Post() {
+        // Do nothing
+    }
+
     public Post(Post post) {
         created_at = post.created_at;
         url = post.url;
