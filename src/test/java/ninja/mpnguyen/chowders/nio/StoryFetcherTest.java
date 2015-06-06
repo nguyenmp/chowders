@@ -1,9 +1,11 @@
 package ninja.mpnguyen.chowders.nio;
 
-import ninja.mpnguyen.chowders.things.json.Story;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import ninja.mpnguyen.chowders.things.json.Story;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class StoryFetcherTest {
     @Test

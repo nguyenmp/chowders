@@ -1,8 +1,8 @@
 package ninja.mpnguyen.chowders.nio.json;
 
-import ninja.mpnguyen.chowders.things.json.Story;
-
 import java.io.IOException;
+
+import ninja.mpnguyen.chowders.things.json.Story;
 
 public final class StoryFetcher extends GetJson<Story> {
     public static Story get(String short_id) throws IOException {

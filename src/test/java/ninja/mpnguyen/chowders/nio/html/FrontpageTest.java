@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import ninja.mpnguyen.chowders.things.html.Post;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class FrontpageTest {
     @Test

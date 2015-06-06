@@ -5,8 +5,6 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URL;
 
 public abstract class Get<T> {
     public T get() throws IOException {

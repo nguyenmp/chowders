@@ -1,8 +1,8 @@
 package ninja.mpnguyen.chowders.nio.json;
 
-import ninja.mpnguyen.chowders.things.json.Post;
-
 import java.io.IOException;
+
+import ninja.mpnguyen.chowders.things.json.Post;
 
 public final class FrontPage extends GetJson<Post[]> {
     public enum Sort {

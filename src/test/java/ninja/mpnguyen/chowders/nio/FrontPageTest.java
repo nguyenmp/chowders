@@ -1,8 +1,9 @@
 package ninja.mpnguyen.chowders.nio;
 
-import ninja.mpnguyen.chowders.things.json.Post;
-import org.junit.Test;
 import org.junit.Assert;
+import org.junit.Test;
+
+import ninja.mpnguyen.chowders.things.json.Post;
 
 public class FrontPageTest {
     @Test
