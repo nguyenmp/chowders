@@ -16,11 +16,6 @@ public abstract class Post<T> implements Callable<T> {
     @Override
     public T call() throws IOException {
         OkHttpClient client = new OkHttpClient();
-        CookieManager cookieManager = new CookieManager();
-        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
-        client.setCookieHandler(cookieManager);
-        client.setFollowSslRedirects(false);
-        client.setFollowRedirects(false);
 
         Request.Builder b = new Request.Builder()
                 .url(getURL())
