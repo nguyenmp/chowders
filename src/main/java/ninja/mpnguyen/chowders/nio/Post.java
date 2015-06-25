@@ -6,14 +6,28 @@ import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
+
+import ninja.mpnguyen.chowders.things.html.Auth;
 
 public abstract class Post<T> {
     public T post() throws IOException {
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder()
+        CookieManager cookieManager = new CookieManager();
+        cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
+        client.setCookieHandler(cookieManager);
+        client.setFollowSslRedirects(false);
+        client.setFollowRedirects(false);
+
+        Request.Builder b = new Request.Builder()
                 .url(getURL())
-                .post(getBody())
-                .build();
+                .post(getBody());
+
+        Auth auth = getAuthentication();
+        if (auth != null) b.header("Cookie", auth.cookie);
+
+        Request request = b.build();
 
         Response response = client.newCall(request).execute();
         return handle(response);
@@ -30,5 +44,9 @@ public abstract class Post<T> {
     }
 
     public abstract String getEndpoint();
-    public abstract T handle(Response response);
+    public abstract T handle(Response response) throws IOException;
+
+    public Auth getAuthentication() {
+        return null;
+    }
 }

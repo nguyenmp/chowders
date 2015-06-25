@@ -1,12 +1,11 @@
 package ninja.mpnguyen.chowders.nio.html;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import ninja.mpnguyen.chowders.nio.Get;
+import ninja.mpnguyen.chowders.nio.StringGet;
 
-public abstract class GetHtml<T> extends Get<T> {
+public abstract class GetHtml<T> extends StringGet<T> {
     public interface Parser<T> {
         T parse(Element e);
     }

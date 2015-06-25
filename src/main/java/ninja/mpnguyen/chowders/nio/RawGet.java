@@ -6,14 +6,17 @@ import com.squareup.okhttp.Response;
 
 import java.io.IOException;
 
-public abstract class Get<T> {
+import ninja.mpnguyen.chowders.things.html.Auth;
+
+public abstract class RawGet<T> {
     public T get() throws IOException {
         OkHttpClient client = new OkHttpClient();
-        Request request = new Request.Builder()
-                .url(getURL()).build();
+        Request.Builder b = new Request.Builder().url(getURL());
+        Auth auth = getAuthentication();
+        if (auth != null) b.addHeader("Cookie", auth.cookie);
+        Request request = b.build();
         Response response = client.newCall(request).execute();
-        String json = response.body().string();
-        return handle(json);
+        return handle(response);
     }
 
     public final String getURL() {
@@ -25,5 +28,8 @@ public abstract class Get<T> {
     }
 
     public abstract String getEndpoint();
-    public abstract T handle(String response);
+    public abstract T handle(Response response) throws IOException;
+    public Auth getAuthentication() {
+        return null;
+    }
 }
