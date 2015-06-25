@@ -19,7 +19,7 @@ public final class FrontPage extends GetJson<Post[]> {
     }
 
     public static Post[] get(Sort sort) throws IOException {
-        return new FrontPage(sort).get();
+        return new FrontPage(sort).call();
     }
 
     private final Sort sort;

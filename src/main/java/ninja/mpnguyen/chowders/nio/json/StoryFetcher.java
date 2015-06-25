@@ -6,7 +6,7 @@ import ninja.mpnguyen.chowders.things.json.Story;
 
 public final class StoryFetcher extends GetJson<Story> {
     public static Story get(String short_id) throws IOException {
-        return new StoryFetcher(short_id).get();
+        return new StoryFetcher(short_id).call();
     }
 
     private final String short_id;

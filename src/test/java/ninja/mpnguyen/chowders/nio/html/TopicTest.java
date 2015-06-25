@@ -21,7 +21,7 @@ public class TopicTest {
 
     private void testTopic(String topic) throws IOException {
         testTopicPaged(topic);
-        Post[] cogscis = new Topic(topic).get();
+        Post[] cogscis = new Topic(topic).call();
         assertNotNull(cogscis);
 
         for (Post cogsci : cogscis) {
@@ -34,7 +34,7 @@ public class TopicTest {
         }
     }
     private void testTopicPaged(String topic) throws IOException {
-        Post[] cogscis = new Topic(topic, 1).get();
+        Post[] cogscis = new Topic(topic, 1).call();
         assertNotNull(cogscis);
 
         for (Post cogsci : cogscis) {

@@ -5,11 +5,13 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 import java.io.IOException;
+import java.util.concurrent.Callable;
 
 import ninja.mpnguyen.chowders.things.html.Auth;
 
-public abstract class RawGet<T> {
-    public T get() throws IOException {
+public abstract class RawGet<T> implements Callable<T> {
+    @Override
+    public T call() throws IOException {
         OkHttpClient client = new OkHttpClient();
         Request.Builder b = new Request.Builder().url(getURL());
         Auth auth = getAuthentication();

@@ -11,7 +11,7 @@ public class UserFetcherTest {
     @Test
     public void testGet() throws Exception {
         String username = "markerz";
-        User user = new ninja.mpnguyen.chowders.nio.json.UserFetcher(username).get();
+        User user = new ninja.mpnguyen.chowders.nio.json.UserFetcher(username).call();
         assertNotNull(user);
         assertEquals(user.username, username);
     }

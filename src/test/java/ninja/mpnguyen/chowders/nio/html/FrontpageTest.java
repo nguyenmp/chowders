@@ -10,17 +10,17 @@ import static org.junit.Assert.assertNotNull;
 public class FrontpageTest {
     @Test
     public void testFrontpageHot() throws Exception {
-        Post[] posts = new Frontpage(Category.Hot).get();
+        Post[] posts = new Frontpage(Category.Hot).call();
         assertNotNull(posts);
     }
     @Test
     public void testFrontpageNewest() throws Exception {
-        Post[] posts = new Frontpage(Category.Newest).get();
+        Post[] posts = new Frontpage(Category.Newest).call();
         assertNotNull(posts);
     }
     @Test
     public void testFrontpageRecent() throws Exception {
-        Post[] posts = new Frontpage(Category.Recent).get();
+        Post[] posts = new Frontpage(Category.Recent).call();
         assertNotNull(posts);
     }
 }

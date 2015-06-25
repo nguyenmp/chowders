@@ -8,11 +8,13 @@ import com.squareup.okhttp.Response;
 import java.io.IOException;
 import java.net.CookieManager;
 import java.net.CookiePolicy;
+import java.util.concurrent.Callable;
 
 import ninja.mpnguyen.chowders.things.html.Auth;
 
-public abstract class Post<T> {
-    public T post() throws IOException {
+public abstract class Post<T> implements Callable<T> {
+    @Override
+    public T call() throws IOException {
         OkHttpClient client = new OkHttpClient();
         CookieManager cookieManager = new CookieManager();
         cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL);
